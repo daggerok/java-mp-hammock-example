@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.github.daggerok</groupId>
+    <artifactId>java-mp-hammock-examplek</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <properties>
+        <java.version>8</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <argLine>-Dfile.encoding=UTF-8</argLine>
+        <mainClass>ws.ament.hammock.Bootstrap</mainClass>
+
+        <vavr.version>0.10.2</vavr.version>
+        <lombok.version>1.18.8</lombok.version>
+        <junit-jupiter.version>5.5.1</junit-jupiter.version>
+        <dist-microprofile.version>2.1</dist-microprofile.version>
+        <capsule-maven-plugin.version>1.5.1</capsule-maven-plugin.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>ws.ament.hammock</groupId>
+            <artifactId>dist-microprofile</artifactId>
+            <version>${dist-microprofile.version}</version>
+        </dependency>
+
+        <!--<dependency>
+            <groupId>io.vavr</groupId>
+            <artifactId>vavr</artifactId>
+            <version>${vavr.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <optional>true</optional>
+            <scope>provided</scope>
+        </dependency>-->
+    </dependencies>
+
+    <build>
+        <defaultGoal>clean package</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>com.github.chrisdchristo</groupId>
+                <artifactId>capsule-maven-plugin</artifactId>
+                <version>${capsule-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>build</goal>
+                        </goals>
+                        <configuration>
+                            <appClass>com.github.daggerok.Application</appClass>
+                            <type>fat</type>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
