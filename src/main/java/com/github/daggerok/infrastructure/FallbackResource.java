@@ -9,7 +9,6 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
 import java.net.URI;
-import java.net.URL;
 
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 
