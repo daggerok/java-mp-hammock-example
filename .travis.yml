@@ -42,7 +42,7 @@ jobs:
     script:
     - cd $TRAVIS_BUILD_DIR && ./mvnw
     - java -jar $TRAVIS_BUILD_DIR/target/*-capsule.jar &
-    - wait_for 808
+    - wait_for 8080
     - sleep 1s
     - http :8080/
     - http :8080/
